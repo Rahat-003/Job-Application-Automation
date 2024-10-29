@@ -1,0 +1,11 @@
+Application for appliedPosition position
+
+Dear Hiring Manager,
+
+I hope this email finds you well. I’m reaching out to express my interest in the appliedPosition position at companyName. I’ve attached my cover letter and resume for your review, where you’ll find more details on my experience and qualifications. With a background in competitive programming and having 8 months of experience in backend development in NodeJS, I believe I can bring valuable skills and insights to your team. I’d love the chance to further discuss how my experience aligns with the needs of companyName.
+
+Thank you for considering my application. I’m looking forward to the possibility of contributing to your team.
+
+Best regards,
+Md. Akhtarul Islam Boshunia Rahat
+Phone: +8801955-021432
