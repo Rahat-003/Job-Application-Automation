@@ -1,4 +1,0 @@
-
-node index.js "Breaking Bad"				"Software Engineer" 			"rahatakhter4@gmail.com"
-node index.js "Game of Thrones" 			"Software Development Engineer" 	"rahatakhter4@gmail.com"
-node index.js "Prison Break" 				"Lead Software Engineer L5" 		"rahatakhter4@gmail.com"
