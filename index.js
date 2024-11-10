@@ -72,9 +72,9 @@ const run = async (company, positionName) => {
     );
 };
 
-const companyEmail = process.argv[2];
-const company = process.argv[3];
-const positionName = process.argv[4];
+const company = process.argv[2];
+const positionName = process.argv[3];
+const companyEmail = process.argv[4];
 
 console.log("Company:", company);
 console.log("Position Name:", positionName);
@@ -82,18 +82,16 @@ console.log("Position Name:", positionName);
 const { sendEmail } = require("./sendEmail");
 
 const generateCoverLetterAndSendMail = async () => {
-    if (
-        checkEmptyString(company) &&
-        checkEmptyString(positionName) &&
-        checkEmptyString(companyEmail)
-    ) {
+    if (checkEmptyString(company) && checkEmptyString(positionName)) {
         await run(company, positionName);
-        await sendEmail(positionName, companyEmail);
+        if (checkEmptyString(companyEmail)) {
+            await sendEmail(positionName, companyEmail);
+        }
     } else {
         const clipboard = 'node index.js "" "" ""';
         console.error("\n\t\tGive following command in terminal");
         console.warn(
-            '\t\tnode index.js "companyEmail" "companyName" "appliedPosition"'
+            '\t\tnode index.js "companyName" "appliedPosition" "companyEmail"'
         );
 
         console.log(success(clipboard));
@@ -108,7 +106,7 @@ async function main() {
     // Await the completion of the async function
     await generateCoverLetterAndSendMail();
     console.timeEnd("Timer");
-    console.log("\n");
+    console.log();
 }
 
 main();
