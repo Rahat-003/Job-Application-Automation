@@ -1,5 +1,6 @@
-node_modules
+/node_modules
 Rahat_Cover_Letter.aux
 Rahat_Cover_Letter.log
 Rahat_Cover_Letter.out
 Rahat_Cover_Letter.tex
+.env

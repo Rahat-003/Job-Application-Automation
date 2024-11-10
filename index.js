@@ -67,7 +67,10 @@ const run = async (company, positionName) => {
     );
 };
 
-const company = "Enosis Solutions";
-const positionName = "Software Enginner";
+const company = process.argv[2];
+const positionName = process.argv[3];
 
 run(company, positionName);
+
+console.log("Company:", company);
+console.log("Position Name:", positionName);
