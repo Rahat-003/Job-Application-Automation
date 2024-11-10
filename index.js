@@ -86,6 +86,9 @@ const generateCoverLetterAndSendMail = async () => {
         await run(company, positionName);
         if (checkEmptyString(companyEmail)) {
             await sendEmail(positionName, companyEmail);
+
+            const data = `\nnode index.js "${company}" "${positionName}" "${companyEmail}"`;
+            fs.appendFileSync("./sendMultipleMail.txt", data, "utf8");
         }
     } else {
         const clipboard = 'node index.js "" "" ""';

@@ -1,3 +1,8 @@
 
-node index.js "Datasoft Systems Bangladesh Limited"      "Software Engineer"            "career@datasoft-bd.com"
-node index.js "BJIT Limited"                             "Software Engineer"            "career@bjitgroup.com"
+node index.js "Datasoft Systems Bangladesh Limited"      "Software Engineer"                    "career@datasoft-bd.com"
+node index.js "BJIT Limited"                             "Software Engineer"                    "career@bjitgroup.com"
+node index.js "iXora Solution Ltd"                       "Odoo Developer"                       "hr@erp.ixorasolution.com"
+node index.js "PixelNet Technologies Ltd"                "Software Engineer"                    "contact@pixelnettech.com"
+node index.js "Technohaven Company Limited"              "Software Developer (Backend)"         "jobs@technohaven.com"
+
+node index.js "OrangeToolz" "Jr. JavaScript Full-Stack Engineer" "career@orangetoolz.com"
