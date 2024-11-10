@@ -1,12 +1,17 @@
+require("dotenv").config();
 const fs = require("fs");
 const { exec } = require("child_process");
 const path = require("path");
+const util = require("util");
+const execPromise = util.promisify(exec);
 const { replaceTextInTex, deleteFileIfExists } = require("./modifyLatex");
 const { generateEmail } = require("./modifyEmail");
+const { success } = require("./success");
 
-const util = require("util");
-
-const execPromise = util.promisify(exec);
+const checkEmptyString = (name) => {
+    if (!name || name === "") return false;
+    return true;
+};
 
 const createPdfFromLatex = async (filePath) => {
     try {
@@ -67,10 +72,35 @@ const run = async (company, positionName) => {
     );
 };
 
-const company = process.argv[2];
-const positionName = process.argv[3];
-
-run(company, positionName);
+const companyEmail = process.argv[2];
+const company = process.argv[3];
+const positionName = process.argv[4];
 
 console.log("Company:", company);
 console.log("Position Name:", positionName);
+
+const { sendEmail } = require("./sendEmail");
+
+const generateCoverLetterAndSendMail = async () => {
+    if (
+        checkEmptyString(company) &&
+        checkEmptyString(positionName) &&
+        checkEmptyString(companyEmail)
+    ) {
+        await run(company, positionName);
+        await sendEmail(positionName, companyEmail);
+    } else {
+        const clipboard = 'node index.js "" "" ""';
+        console.error("\n\t\tGive following command in terminal");
+        console.warn(
+            '\t\tnode index.js "companyEmail" "companyName" "appliedPosition"'
+        );
+
+        console.log(success(clipboard));
+        // console.log(
+        //     '\x1b[1m\x1b[32m\t\tnode index.js "" "" ""\x1b[39m\x1b[22m\n'
+        // );
+    }
+};
+
+generateCoverLetterAndSendMail();
