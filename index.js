@@ -103,4 +103,12 @@ const generateCoverLetterAndSendMail = async () => {
     }
 };
 
-generateCoverLetterAndSendMail();
+async function main() {
+    console.time("Timer");
+    // Await the completion of the async function
+    await generateCoverLetterAndSendMail();
+    console.timeEnd("Timer");
+    console.log("\n");
+}
+
+main();

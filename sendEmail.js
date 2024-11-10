@@ -13,8 +13,6 @@ exports.sendEmail = async (positionName, companyEmail) => {
             },
         });
 
-        // console.log("app_password", process.env.app_password);
-
         const mailOptions = {
             // from: process.env.EMAIL_USER,
             to: companyEmail,
@@ -45,11 +43,3 @@ exports.sendEmail = async (positionName, companyEmail) => {
     }
 };
 
-// exports.sendEmail = async () => {
-//     try {
-//         const info = await transporter.sendMail(mailOptions);
-//         // console.log("Email sent:", info.response);
-//     } catch (error) {
-//         console.log("Error:", error);
-//     }
-// };

@@ -22,7 +22,7 @@ exports.replaceTextInTex = async (
 
         // Write the updated content to the output file
         await fs.writeFile(outputFilePath, data, "utf8");
-        console.log("Output file created successfully!");
+        // console.log("Output file created successfully!");
     } catch (err) {
         console.error("Error processing the file:", err);
     }
@@ -38,7 +38,7 @@ exports.deleteFileIfExists = async (directory, fileName) => {
         );
     } catch (err) {
         if (err.code === "ENOENT") {
-            console.log(`File ${fileName} does not exist in the directory.`);
+            // console.log(`File ${fileName} does not exist in the directory.`);
         } else {
             console.error("Error deleting the file:", err);
         }
