@@ -6,3 +6,11 @@ node index.js "PixelNet Technologies Ltd"                "Software Engineer"    
 node index.js "Technohaven Company Limited"              "Software Developer (Backend)"         "jobs@technohaven.com"
 
 node index.js "OrangeToolz" "Jr. JavaScript Full-Stack Engineer" "career@orangetoolz.com"
+
+
+node index.js "EchoLogyx Ltd" "Software Engineer - Node.js" "jobs@echologyx.com"
+node index.js "InsideMaps" "Software Engineer" "salman@insidemaps.com"
+node index.js "AskTuring.ai " "Backend Engineer" "talha@askturing.ai"
+node index.js "MAT Services BD" "asif.matservices@gmail.com" "asif.matservices@gmail.com"
+node index.js "WPXPO" "Junior Software Engineer" "career@wpxpo.com"
+node index.js "Truck Lagbe" "Software Engineer (Backend)" "career@trucklagbe.com"
