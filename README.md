@@ -21,4 +21,6 @@ This is a **fun and practical Node.js project** designed to automate the job app
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/job-application-automation.git
+   git clone https://github.com/Rahat-003/Cover_Letter.git
+
+![Screenshot from 2024-11-23 00-51-25](https://github.com/user-attachments/assets/6a161c8c-4f78-41fb-b4e9-b4ad9674d6da)
