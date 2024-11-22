@@ -53,8 +53,8 @@ const run = async (company, positionName) => {
     const texFile = "Rahat_Cover_Letter";
     const latexFilePath = path.join(__dirname, `${texFile}.tex`);
 
-    await deleteFileIfExists(__dirname, `${texFile}.pdf`);
-
+    // await deleteFileIfExists(__dirname, `${texFile}.pdf`);
+    // console.log({ latexFilePath });
     await replaceTextInTex(
         inputFilePath,
         `${texFile}.tex`,
@@ -92,9 +92,9 @@ const generateCoverLetterAndSendMail = async () => {
         }
     } else {
         const clipboard = 'node index.js "" "" ""';
-        console.error("\n\t\tGive following command in terminal");
+        console.error("\n\tGive following command in terminal");
         console.warn(
-            '\t\tnode index.js "companyName" "appliedPosition" "companyEmail"'
+            '\tnode index.js "companyName" "appliedPosition" "companyEmail"'
         );
 
         console.log(success(clipboard));

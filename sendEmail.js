@@ -16,7 +16,7 @@ exports.sendEmail = async (positionName, companyEmail) => {
         const mailOptions = {
             // from: process.env.EMAIL_USER,
             to: companyEmail,
-            subject: `Application for ${positionName}`,
+            subject: `Application for ${positionName} position`,
             text: emailBody,
             attachments: [
                 {

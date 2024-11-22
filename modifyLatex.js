@@ -31,6 +31,9 @@ exports.replaceTextInTex = async (
 exports.deleteFileIfExists = async (directory, fileName) => {
     try {
         const filePath = path.join(directory, fileName);
+        console.log("\n\n----------");
+        console.log(filePath);
+
         await fs.access(filePath);
         await fs.unlink(filePath);
         console.log(
