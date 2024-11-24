@@ -30,8 +30,10 @@ const createPdfFromLatex = async (filePath) => {
         // Run pdflatex command to compile LaTeX to PDF in the specified directory
         const { stdout, stderr } = await execPromise(
             `pdflatex -output-directory=${dir} ${filePath}`
+            // `pdflatex -interaction=nonstopmode -output-directory="${dir}" "${filePath}"`
         );
-
+        // console.log("pdflatex stdout:", stdout);
+        // console.error("pdflatex stderr:", stderr);
         // Check for errors in pdflatex execution
         if (stderr) {
             console.error(`pdflatex error: ${stderr}`);
@@ -48,6 +50,25 @@ const createPdfFromLatex = async (filePath) => {
     }
 };
 
+function escapeLatexSpecialChars(input) {
+    // Define a map for the special characters and their escaped versions
+    const specialChars = {
+        "#": "\\#",
+        $: "\\$",
+        "%": "\\%",
+        "&": "\\&",
+        _: "\\_",
+        "{": "\\{",
+        "}": "\\}",
+        "~": "\\textasciitilde", // '~' has a special meaning in LaTeX
+        "^": "\\textasciicircum", // '^' is used for superscript in LaTeX
+        "\\": "\\textbackslash",
+    };
+
+    // Iterate over the input string and replace special characters with their escaped versions
+    return input.replace(/[#$%\&_\{\}~^\\]/g, (match) => specialChars[match]);
+}
+
 const run = async (company, positionName) => {
     const inputFilePath = "document.tex";
     const texFile = "Rahat_Cover_Letter";
@@ -58,8 +79,8 @@ const run = async (company, positionName) => {
     await replaceTextInTex(
         inputFilePath,
         `${texFile}.tex`,
-        company,
-        positionName
+        escapeLatexSpecialChars(company),
+        escapeLatexSpecialChars(positionName)
     );
 
     await createPdfFromLatex(latexFilePath);

@@ -29,3 +29,9 @@ node index.js "Genesys Softwares" "Junior Backend Developer" "hello@genesysoftwa
 node index.js "Cloud Next Generation UK LTD" "Backend Developer (Django)" "info@cloudnextuk.co.uk"
 
 
+
+node index.js "CifarX" "Backend Engineer" "teamcifarx@gmail.com"
+node index.js "eComFixR" "Jr. Web Developer" "career@ecomfixr.com"
+
+node index.js "Golden Info Systems Limited" "Jr. Software Engineer (C# .NET)" "ibrahim@goldeninfosystems.com"
+
